@@ -1,24 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { useState } from 'react';
 import style from './LoginComponent.module.scss'
-import { motion } from 'framer-motion';
-
-// const variants = {
-//     hidden: {
-//       x: "15%",
-//       opacity: 0,
-//     },
-//     visible: {
-//       x: 0,
-//       opacity: 1,
-//       transition: {
-//         duration: 0.7,
-//       },
-//     },
-//   };
+import { AnimatePresence, motion } from 'framer-motion';
 
 export default function LoginComponent() {
+
     const [step, setStep] = useState(1);
+
+
     return (
 
         <div className={style.loginContainer}>
@@ -28,14 +17,17 @@ export default function LoginComponent() {
                 <Step step={3} currentStep={step}/>
                 <Step step={4} currentStep={step}/>
             </div>
+            <AnimatePresence mode='wait'>
             {step === 1 &&
                 <motion.div
+                    key='step1'
                     className={style.loginContent}
                     initial={false}
-                    animate={{ x: [70,-10,0], opacity : [0,0.3,1]}}
+                    animate={{ x: [500,-20,5,0], opacity : [0,0.5,1,1]}}
+                    exit={{ x: [0,8,10,-500], opacity : [1,1,1,0.8]}}
                     transition={{
                         type:"keyframes",
-                        duration: 0.5,
+                        duration: 0.4,
                     }}
                 >
                     <div style={{display: 'flex', flexDirection: 'column', gap:"3px"}}>
@@ -52,67 +44,72 @@ export default function LoginComponent() {
 
             {step === 2 &&
                 <motion.div
+                    key='step2'
                     className={style.loginContent}
-                    animate={{ x: [70,-5,0], opacity : [0,0.3,1]}}
-                    transition={{
+                    animate={{ x: [500,-20,5,0], opacity : [0,0.5,1,1]}}
+                    exit={{ x: [0,8,10,-500], opacity : [1,1,1,0.8]}}                  transition={{
                         type:"keyframes",
-                        duration: 0.5,
+                        duration: 0.4,
                     }}
                 >
                     <div style={{display: 'flex', flexDirection: 'column', gap:"3px"}}>
-                        <label>Apellido</label>
+                        <label>Mail</label>
                         <input type="text" />
                     </div>
 
                     <div style={{display: 'flex', flexDirection: 'column', gap:"3px"}}>
-                        <label>Nombre</label>
+                        <label>Domicilio</label>
                         <input type="text" />
                     </div>
                 </motion.div>
             }
             {step === 3 &&
                 <motion.div
+                    key='step3'
                     className={style.loginContent}
                     initial={{ x: 50, opacity: 0 }}
-                    animate={{ x: [70,-5,0], opacity : [0,0.3,1]}}
+                    animate={{ x: [500,-20,5,0], opacity : [0,0.5,1,1]}}
+                    exit={{ x: [0,8,10,-500], opacity : [1,1,1,0.8]}}
                     transition={{
                         type:"keyframes",
                         duration: 0.5,
                     }}
-
                 >
                     <div style={{display: 'flex', flexDirection: 'column', gap:"3px"}}>
-                        <label>Apellido</label>
+                        <label>Otro dato</label>
                         <input type="text" />
                     </div>
 
                     <div style={{display: 'flex', flexDirection: 'column', gap:"3px"}}>
-                        <label>Nombre</label>
+                        <label>Otro dato mas</label>
                         <input type="text" />
                     </div>
                 </motion.div>
             }
             {step === 4 &&
                 <motion.div
+                    key='step4'
                     className={style.loginContent}
                     initial={{ x: 50, opacity: 0 }}
-                    animate={{ x: [70,-5,0], opacity : [0,0.3,1]}}
+                    animate={{ x: [500,-20,5,0], opacity : [0,0.5,1,1]}}
+                    exit={{ x: [0,8,10,-500], opacity : [1,1,1,0.8]}}
                     transition={{
                         type:"keyframes",
                         duration: 0.5,
                     }}
                 >
                     <div style={{display: 'flex', flexDirection: 'column', gap:"3px"}}>
-                        <label>Apellido</label>
+                        <label>Nombre de tu perro</label>
                         <input type="text" />
                     </div>
 
                     <div style={{display: 'flex', flexDirection: 'column', gap:"3px"}}>
-                        <label>Nombre</label>
+                        <label>Team verano?</label>
                         <input type="text" />
                     </div>
                 </motion.div>
             }
+            </AnimatePresence>
 
             <div className={style.loginFooter}>
                 <button 
@@ -123,7 +120,7 @@ export default function LoginComponent() {
                 { step < 4 ?
                     <button 
                     className={style.nextButton}
-                    onClick={() => setStep(step > 4 ? step : step +1)}>
+                    onClick={() => {setStep(step > 4 ? step : step + 1)}}>
                         Next
                     </button>
                 :
