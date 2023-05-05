@@ -1,0 +1,75 @@
+.loginContainer{
+    width: 450px;
+    height: 320px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 30px;
+
+}
+.stepsContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 10px;
+    padding-bottom: 0;
+
+}
+.loginContent{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left: 10px;
+    gap: 15px;
+    width: 100%;
+    justify-content: flex-start;
+
+    input {
+        border: 2px solid #E2E8F0;
+        border-radius: 5px;
+        width: 90%;
+        height: 2rem;
+    }
+    label{
+        margin-left: 3px;
+    }
+}
+
+.loginFooter{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.backButton {
+    padding: 0.3rem 1rem;
+    border-radius: 15px;
+    color: grey;
+    &:hover {
+      color: black;
+    }
+  }
+.nextButton{
+padding: 0.3rem 1rem;
+border-radius: 15px;
+background-color: #3B82F6;
+color: white;
+&:hover {
+    background-color: #166bf4;
+    }
+}
+  
+.submitButton{
+padding: 0.3rem 1rem;
+border-radius: 15px;
+background-color: #00c486;
+color: white;
+&:hover {
+    background-color: #00aa74;
+    }
+}
+  
