@@ -35,18 +35,21 @@ function PhotoCard(Props: {
       viewport={{ once: true, amount: 0.5 }}
       transition={{ staggerChildren: 0.5 }}
     >
-        <motion.div variants={imageAnimate}>
-          <Image
-            className={style.imgOnCard}
-            src={`${Props.imgSrc}.jpg`}
-            alt="photo"
-            width={400}
-            height={600}
-            placeholder="blur"
-            blurDataURL={`${Props.imgSrc}-blur.jpg`}
-          ></Image>
-        </motion.div>
-
+      <motion.div
+        variants={imageAnimate}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 1.1 }}
+      >
+        <Image
+          className={style.imgOnCard}
+          src={`${Props.imgSrc}.jpg`}
+          alt="photo"
+          width={400}
+          height={600}
+          placeholder="blur"
+          blurDataURL={`${Props.imgSrc}-blur.jpg`}
+        ></Image>
+      </motion.div>
 
       <motion.h1 variants={textAnimate}>{Props.title}</motion.h1>
       <motion.p variants={textAnimate}>{Props.description}</motion.p>
