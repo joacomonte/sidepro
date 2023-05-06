@@ -41,7 +41,6 @@
 }
 
 .loginFooter{
-    box-sizing:content-box;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -81,4 +80,14 @@ color: white;
     flex-direction: column;
     gap: 3px
 }
-  
+
+.stepCircle{
+    display: flex;
+    height: 35px;
+    width: 35px;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px blue;
+    font-size: 15px;
+    border-radius: 50px;
+}
