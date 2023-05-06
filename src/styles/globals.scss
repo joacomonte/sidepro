@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    vertical-align: baseline;
+    -webkit-tap-highlight-color: transparent; /* for removing the highlight on mobile tap */
+  }
+
+body
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    vertical-align: baseline;
+    -webkit-tap-highlight-color: transparent; /* for removing the highlight on mobile tap */
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: #444444;
+    font-size: 1em;
+    background-color: #18191B;
+    width: 100%;
+}
+
+.indexMain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 80px;
+
+}
+.indexContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    h1 {
+        font-size: clamp(20px, 10vw, 50px);
+    }
+}
+
+.typeWrittingColor{
+    color: hsl(280,100%,70%);
+}
+
+.photographyPageContainer{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 70px;
+}
+
+.aboutPageContaner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}

@@ -4,7 +4,7 @@ import { SessionProvider } from "next-auth/react";
 
 import { api } from "~/utils/api";
 
-import "~/styles/globals.css";
+import "~/styles/globals.scss";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";

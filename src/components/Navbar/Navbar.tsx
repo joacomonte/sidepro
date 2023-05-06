@@ -61,7 +61,7 @@ export default function Navbar() {
                     onClick={() => {handleTabClick(tab);}}
                     className={`${
                     activeTab === tab.id ? "" : "hover:text-white/60"
-                    } relative rounded-full px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
+                    } relative rounded-full px-4 py-1 `}
                     style={{
                     WebkitTapHighlightColor: "transparent",
                     }}
