@@ -27,7 +27,7 @@ export default function Navbar() {
     const tabs: Tab[] = [
         { id: "Home", label: "Home", link: "/" }, 
         { id: "About", label: "About", link: "/about" },
-        { id: "Contact", label: "Contact", link: "/contact" },
+        { id: "Photography", label: "Photograpy", link: "/photography" },
         { id: "Projects", label: "Projects", link: "/projects" },
         { id: "Login", label: sessionData ? "Logout" : "Login", link: "/create-account" },
     ];

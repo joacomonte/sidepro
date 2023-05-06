@@ -32,6 +32,7 @@ const Home: NextPage = () => {
           </h1>
           {sessionData && <h3 className="text-white sm:text-[1.5rem]">Bienvenido {sessionData.user?.name}</h3>}
         </div>
+        
       </main>
     </>
   );

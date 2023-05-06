@@ -1,0 +1,31 @@
+
+.cardContainer{
+    color: rgb(227, 227, 227);
+    width: 450px;
+    height: 700px;
+    padding: 15px;
+    background-color: rgb(32, 32, 32);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    h1{
+        font-size: 2rem;
+    }
+    p{
+        font-size: 1.3rem;
+    }
+}
+
+.imgOnCard{
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: -1px 1px 27px 2px rgba(0,0,0,0.82);
+    -webkit-box-shadow: -1px 1px 27px 2px rgba(0,0,0,0.82);
+    -moz-box-shadow: -1px 1px 27px 2px rgba(0,0,0,0.82);
+    margin-bottom: 20px;
+    max-width: 4500px;
+    max-height: 550px;
+}
