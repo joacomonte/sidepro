@@ -23,8 +23,8 @@ const MyApp: AppType<{ session: Session | null }> = ({
   };
 
   return (
-    <AnimatePresence>
-      <SessionProvider session={session}>
+    <SessionProvider session={session}>
+        <AnimatePresence>
         <Layout>
           <motion.div
             key={router.route}
@@ -38,8 +38,8 @@ const MyApp: AppType<{ session: Session | null }> = ({
             <Component {...pageProps} />
           </motion.div>
         </Layout>
-      </SessionProvider>
     </AnimatePresence>
+      </SessionProvider>
   );
 };
 

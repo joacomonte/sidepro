@@ -1,10 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
-
 import { motion } from "framer-motion";
 import style from "./photoCard.module.scss";
+import { Suspense } from "react";
+import Image from "next/image";
 
 const imageAnimate = {
   offscreen: { x: -100, opacity: 0 },
@@ -14,7 +11,6 @@ const imageAnimate = {
     rotate: [0, 10, 0],
     transition: { type: "spring", bounce: 0.4, duration: 1 },
   },
-
 };
 
 const textAnimate = {
@@ -24,7 +20,6 @@ const textAnimate = {
     opacity: 1,
     transition: { type: "spring", bounce: 0.4, duration: 1 },
   },
-
 };
 
 function PhotoCard(Props: {
@@ -40,14 +35,20 @@ function PhotoCard(Props: {
       viewport={{ once: true, amount: 0.5 }}
       transition={{ staggerChildren: 0.5 }}
     >
-      <motion.img
-        variants={imageAnimate}
-        className={style.imgOnCard}
-        src={Props.imgSrc}
-        alt="photo"
-      />
-      <motion.h1
-      variants={textAnimate}>{Props.title}</motion.h1>
+        <motion.div variants={imageAnimate}>
+          <Image
+            className={style.imgOnCard}
+            src={`${Props.imgSrc}.jpg`}
+            alt="photo"
+            width={400}
+            height={600}
+            placeholder="blur"
+            blurDataURL={`${Props.imgSrc}-blur.jpg`}
+          ></Image>
+        </motion.div>
+
+
+      <motion.h1 variants={textAnimate}>{Props.title}</motion.h1>
       <motion.p variants={textAnimate}>{Props.description}</motion.p>
     </motion.div>
   );
