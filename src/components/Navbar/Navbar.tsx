@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import { useEffect, useState, useLayoutEffect } from "react";
+import { useEffect, useState } from "react";
 import style from "./Navbar.module.scss";
 import { motion } from "framer-motion";
 import { useSession, signOut } from "next-auth/react";
@@ -13,17 +13,23 @@ export default function Navbar() {
   const [viewportWidth, setViewportWidth] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  useLayoutEffect(() => {
-    function updateViewportWidth() {
-      setViewportWidth(window.innerWidth);
-    }
-
-    window.addEventListener("resize", updateViewportWidth);
-    updateViewportWidth();
-
-    viewportWidth < 1000 ?  setIsMobile(true) : setIsMobile(false);
-
-    return () => window.removeEventListener("resize", updateViewportWidth);
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver(entries => {
+      if (entries[0]) {
+        const { width } = entries[0].contentRect;
+        setViewportWidth(width);
+      }
+    });
+  
+    resizeObserver.observe(document.documentElement);
+  
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, []);
+  
+  useEffect(() => {
+    setIsMobile(viewportWidth < 1000);
   }, [viewportWidth]);
 
   interface Tab {
