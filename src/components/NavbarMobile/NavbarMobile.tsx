@@ -41,7 +41,7 @@ export default function NavbarMobile() {
   const { data: sessionData } = useSession();
   const router = useRouter();
   const isMobile = useIsMobileHook();
-  const [toggle, setToggle] = useState(false);
+  const [toggleSideBar, setToggleSideBar] = useState(false);
 
   const tabs: Tab[] = [
     { id: "Home", label: "Home", link: "/" },
@@ -107,7 +107,7 @@ export default function NavbarMobile() {
       ) : (
         <div className={style.main}>
           <AnimatePresence>
-            {toggle && (
+            {toggleSideBar && (
               <motion.aside
                 className={style.aside}
                 initial={{
@@ -131,7 +131,7 @@ export default function NavbarMobile() {
               >
                       <button 
                       style={{marginLeft:10, fontSize:20}}
-                      onClick={() => setToggle(!toggle)}> X </button>
+                      onClick={() => setToggleSideBar(!toggleSideBar)}> X </button>
                 <motion.div
                   initial="closed"
                   animate="open"
@@ -145,6 +145,7 @@ export default function NavbarMobile() {
                         key={tab.id}
                         onClick={() => {
                           handleTabClick(tab);
+                          setToggleSideBar(false);
                         }}
                       >
                         {tab.label}
@@ -158,7 +159,7 @@ export default function NavbarMobile() {
         </div>
       )}
       <button style={{fontSize:30, color:"white", padding:20}}
-      onClick={() => setToggle(!toggle)}> MENU </button>
+      onClick={() => setToggleSideBar(!toggleSideBar)}> MENU </button>
     </>
   );
 }
