@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function isMobileHook() {
+function useIsMobileHook() {
   const [viewportWidth, setViewportWidth] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -25,4 +25,4 @@ function isMobileHook() {
   return isMobile;
 }
 
-export default isMobileHook;
+export default useIsMobileHook;

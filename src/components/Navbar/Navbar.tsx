@@ -5,7 +5,7 @@ import style from "./Navbar.module.scss";
 import { motion } from "framer-motion";
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
-import isMobileHook from "~/utils/isMobileHook";
+import isMobileHook from "~/utils/useIsMobileHook";
 
 interface Tab {
   id: string;

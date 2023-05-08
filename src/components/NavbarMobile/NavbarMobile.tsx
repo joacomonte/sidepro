@@ -5,7 +5,7 @@ import style from "./NavbarMobile.module.scss";
 import { AnimatePresence, motion } from "framer-motion";
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
-import isMobileHook from "~/utils/isMobileHook";
+import useIsMobileHook from "~/utils/useIsMobileHook";
 
 interface Tab {
   id: string;
@@ -40,7 +40,7 @@ const sideVariants = {
 export default function NavbarMobile() {
   const { data: sessionData } = useSession();
   const router = useRouter();
-  const isMobile = isMobileHook();
+  const isMobile = useIsMobileHook();
   const [toggle, setToggle] = useState(false);
 
   const tabs: Tab[] = [
@@ -157,7 +157,8 @@ export default function NavbarMobile() {
           </AnimatePresence>
         </div>
       )}
-      <button onClick={() => setToggle(!toggle)}> toogle </button>
+      <button style={{fontSize:30, color:"white", padding:20}}
+      onClick={() => setToggle(!toggle)}> MENU </button>
     </>
   );
 }
