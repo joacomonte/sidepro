@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import style from "./photoCard.module.scss";
-import { Suspense } from "react";
 import Image from "next/image";
 
 const imageAnimate = {
@@ -9,7 +8,7 @@ const imageAnimate = {
     x: 0,
     opacity: 1,
     rotate: [0, 10, 0],
-    transition: { type: "spring", bounce: 0.4, duration: 1 },
+    transition: { type: "spring", bounce: 0.4, duration: 0.7 },
   },
 };
 
@@ -18,7 +17,7 @@ const textAnimate = {
   onscreen: {
     y: 0,
     opacity: 1,
-    transition: { type: "spring", bounce: 0.4, duration: 1 },
+    transition: { type: "spring", bounce: 0.4, duration: 0.7 },
   },
 };
 
