@@ -62,9 +62,11 @@ body
 
 .aboutPageContaner{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
     font-size: 20px;
     text-align: center;
+    gap: 50px;
 }
