@@ -5,38 +5,18 @@ import style from "./Navbar.module.scss";
 import { motion } from "framer-motion";
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
+import isMobileHook from "~/utils/isMobileHook";
+
+interface Tab {
+  id: string;
+  label: string;
+  link: string;
+}
 
 export default function Navbar() {
   const { data: sessionData } = useSession();
   const router = useRouter();
-
-  const [viewportWidth, setViewportWidth] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const resizeObserver = new ResizeObserver(entries => {
-      if (entries[0]) {
-        const { width } = entries[0].contentRect;
-        setViewportWidth(width);
-      }
-    });
-  
-    resizeObserver.observe(document.documentElement);
-  
-    return () => {
-      resizeObserver.disconnect();
-    };
-  }, []);
-  
-  useEffect(() => {
-    setIsMobile(viewportWidth < 1000);
-  }, [viewportWidth]);
-
-  interface Tab {
-    id: string;
-    label: string;
-    link: string;
-  }
+  const isMobile = isMobileHook();
 
   const tabs: Tab[] = [
     { id: "Home", label: "Home", link: "/" },
@@ -72,9 +52,7 @@ export default function Navbar() {
 
   return (
     <div className={style.container}>
-      <div>
-        {isMobile ? <p>is mobile</p> : <p>is desktop</p>}
-      </div>
+      <div>{isMobile ? <p>is mobile</p> : <p>is desktop</p>}</div>
 
       {tabs.map((tab) => (
         <button
