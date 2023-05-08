@@ -15,12 +15,12 @@ interface Tab {
 
 const itemVariants = {
   closed: {
-    opacity: 0,
+    x:-200,
     transition: {
       duration: 0.1,
     },
   },
-  open: { opacity: 1 },
+  open: { x:0 },
 };
 const sideVariants = {
   closed: {
@@ -31,7 +31,7 @@ const sideVariants = {
   },
   open: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
       staggerDirection: 1,
     },
   },
@@ -118,7 +118,7 @@ export default function NavbarMobile() {
                 }}
                 animate={{
                   x: 0,
-                  width: 150,
+                  width: 220,
                   height: "auto",
                   borderBottomRightRadius: 20,
                   borderTopRightRadius: 20,
@@ -126,7 +126,7 @@ export default function NavbarMobile() {
                 exit={{
                   width: 0,
                   x: -100,
-                  transition: { delay: 0.3, duration: 0.3 },
+                  transition: { delay: 0.25, duration: 0.2 },
                 }}
               >
                       <button 

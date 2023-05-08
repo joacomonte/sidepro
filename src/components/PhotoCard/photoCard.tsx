@@ -37,7 +37,6 @@ function PhotoCard(Props: {
       <motion.div
         variants={imageAnimate}
         whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 1.1 }}
       >
         <Image
           className={style.imgOnCard}
