@@ -64,6 +64,20 @@ color: white;
     background-color: #166bf4;
     }
 }
+
+.homeButton{
+    padding: 0.3rem 1rem;
+    border-radius: 15px;
+    color: grey;
+    position: absolute;
+    top: 50%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    &:hover {
+      color: black;
+    }
+}
+
   
 .submitButton{
 padding: 0.3rem 1rem;

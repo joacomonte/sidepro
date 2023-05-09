@@ -2,6 +2,7 @@
 import { useState } from "react";
 import style from "./LoginComponent.module.scss";
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 // import StepAnimation from "./StepsAnimation";
 
 export default function LoginComponent() {
@@ -24,7 +25,7 @@ export default function LoginComponent() {
       setTimeout(() => {
         setIsButtonDisabled(false);
       }, 500);
-      setStep(step > 5 ? step : step + 1);
+      setStep(step > 4 ? step : step + 1);
     }
   }
 
@@ -160,6 +161,7 @@ export default function LoginComponent() {
                 }}
               >
                 Thank you! :)
+                
               </motion.div>
             </div>
           </motion.div>
@@ -167,22 +169,32 @@ export default function LoginComponent() {
       </AnimatePresence>
 
       <div className={style.loginFooter}>
-        <button className={style.backButton} onClick={() => handleBackClick()}>
-          Back
-        </button>
-        {step < 5 ? (
-          <button
-            className={style.nextButton}
-            onClick={() => {
-              handleNextClick();
-            }}
-          >
-            Next
-          </button>
+        {step === 5 ? (
+          <Link className={style.homeButton} href="/">
+            Back to Home
+          </Link>
         ) : (
+          <>
+            <button
+              className={style.backButton}
+              onClick={() => handleBackClick()}
+            >
+              Back
+            </button>
+            {step < 4 && (
+              <button
+                className={style.nextButton}
+                onClick={() => handleNextClick()}
+              >
+                Next
+              </button>
+            )}
+          </>
+        )}
+        {step === 4 && (
           <button
             className={style.submitButton}
-            onClick={() => console.log("submit")}
+            onClick={() => handleNextClick()}
           >
             Submit
           </button>
