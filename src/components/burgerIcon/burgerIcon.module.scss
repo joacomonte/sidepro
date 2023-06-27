@@ -1,0 +1,15 @@
+.burger.open .bar1 {
+    transform: rotate(var(--bar-1-rotation)) translate(var(--x), var(--y));
+    background-color: white;
+  }
+  
+  .burger.open .bar2 {
+    opacity: 0;
+    background-color: white;
+  }
+  
+  .burger.open .bar3 {
+    transform: rotate(var(--bar-3-rotation)) translate(var(--x), var(--neg-y));
+    background-color: white;
+  }
+  

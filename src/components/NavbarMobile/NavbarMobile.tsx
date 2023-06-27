@@ -15,12 +15,12 @@ interface Tab {
 
 const itemVariants = {
   closed: {
-    x:-200,
+    x: -200,
     transition: {
       duration: 0.1,
     },
   },
-  open: { x:0 },
+  open: { x: 0 },
 };
 const sideVariants = {
   closed: {
@@ -42,6 +42,7 @@ export default function NavbarMobile() {
   const router = useRouter();
   const isMobile = useIsMobileHook();
   const [toggleSideBar, setToggleSideBar] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const tabs: Tab[] = [
     { id: "Home", label: "Home", link: "/" },
@@ -129,9 +130,13 @@ export default function NavbarMobile() {
                   transition: { delay: 0.25, duration: 0.2 },
                 }}
               >
-                      <button 
-                      style={{marginLeft:10, fontSize:20}}
-                      onClick={() => setToggleSideBar(!toggleSideBar)}> X </button>
+                <button
+                  style={{ marginLeft: 10, fontSize: 20 }}
+                  onClick={() => setToggleSideBar(!toggleSideBar)}
+                >
+                  X
+                </button>
+
                 <motion.div
                   initial="closed"
                   animate="open"
@@ -158,8 +163,12 @@ export default function NavbarMobile() {
           </AnimatePresence>
         </div>
       )}
-      <button style={{fontSize:30, color:"white", padding:20}}
-      onClick={() => setToggleSideBar(!toggleSideBar)}> MENU </button>
+      <button
+        style={{ fontSize: 30, color: "white", padding: 20 }}
+        onClick={() => setToggleSideBar(!toggleSideBar)}
+      >
+        MENU
+      </button>
     </>
   );
 }

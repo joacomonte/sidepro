@@ -1,0 +1,20 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+import React from "react";
+import style from "./burgerIcon.module.scss";
+
+
+
+function IconBurger({ isOpen, toggle }): JSX.Element {
+  const c = isOpen ? `${style.burger} ${style.open}` : style.burger;
+
+  return (
+    <div className={c} onClick={() => toggle(!isOpen)}>
+      <span className="bar1"></span>
+      <span className="bar2"></span>
+      <span className="bar3"></span>
+    </div>
+  );
+}
+
+export default IconBurger;
