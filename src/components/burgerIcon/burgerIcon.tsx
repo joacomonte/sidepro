@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
+
+
 import React from "react";
 import style from "./burgerIcon.module.scss";
 
