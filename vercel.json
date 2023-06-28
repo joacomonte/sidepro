@@ -1,0 +1,9 @@
+{
+    "build": {
+      "env": {
+        "CI": "true",
+        "NEXT_TELEMETRY_DISABLED": "1",
+        "TSC_COMPILE_ON_ERROR": "true"
+      }
+    }
+  }
