@@ -59,6 +59,12 @@
     }
 }
 
+.openModalButton{
+    @media (min-width: 1001px) {
+    display: none;
+  }
+}
+
 
 // "absolute inset-0 z-10 bg-white mix-blend-difference"
   
