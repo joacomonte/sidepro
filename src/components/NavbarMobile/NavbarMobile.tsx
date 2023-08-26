@@ -163,12 +163,12 @@ export default function NavbarMobile() {
           </AnimatePresence>
         </div>
       )}
-      <button
+{/*       <button
         style={{ fontSize: 30, color: "white", padding: 20 }}
         onClick={() => setToggleSideBar(!toggleSideBar)}
       >
         MENU
-      </button>
+      </button> */}
     </>
   );
 }
